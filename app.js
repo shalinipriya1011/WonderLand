@@ -40,6 +40,13 @@ app.get("/listings",async (req,res) =>{
 //     res.send("successful testing");
 // });
 
+
+//New Route
+app.get("/listings/new", (req, res) => {
+    res.render("listings/new.ejs");
+  });
+
+//show route
 app.get("/listings/:id", async(req,res) => {
     let {id} = req.params;
    const listing= await Listing.findById(id);
